@@ -1,0 +1,19 @@
+<hal-hero class="dining-hero" hero-image="diningHeroImageUrl" ng-controller="LoginCtrl">
+	<dining-vertical-strip></dining-vertical-strip>
+	Module::{{module}}
+	<h3>{{loginText}}</h3>
+</hal-hero>
+<h1>login</h1>
+
+<hero hero-view="dining"></hero>
+
+<div class="dining-content-area fluid">
+
+	<div class="dining-sidebar"></div>
+
+	<div class="dining-content fluid">
+		<hal-dining-tile ng-repeat="restaurant in diningCatalog.diningRestaurants"
+						 restaurant="restaurant"></hal-dining-tile>
+	</div>
+
+</div>
