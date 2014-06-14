@@ -7,7 +7,7 @@
 
 "use strict";
 /**
- * all services are avail app wide */
+ * all serivces are avail app wide */
 angular.module('activitiesService',
     []
     )

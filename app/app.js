@@ -23,41 +23,44 @@ angular.module('haldev01App', [
         .state('index', {
             url: '/',
             templateUrl: 'main/main.html',
-            controller: angular.module('main').controller.MainCtrl
+            controller: 'MainCtrl'
         })
         .state('activities', {
             url: '/activities',
             templateUrl: 'activities/activities.html',
-            controller: angular.module('login').controller.LoginCtrl
+            controller: 'LoginCtrl'
         })
         .state('login', {
             url: '/login',
             templateUrl: 'login/login.html',
-            controller: angular.module('activities').controller.ActivitiesCtrl
+            controller: 'ActivitiesCtrl'
         });
 })
 .factory('GlobalFactory', function(){
     return{
-        scope:'global service.  i am avail to all modules, aka global scope'
+        scope:'i am avail to all modules, aka global scope'
     }
 })
 .run(function ($rootScope, $urlRouter, $state) {
 
     $rootScope.$on('$locationChangeSuccess', function (evt, toState, toParams, fromState, fromParams) {
 
-    // Halt state change from even starting
-    evt.preventDefault();
+        // Halt state change from even starting
+        evt.preventDefault();
 
-    // Perform auth logic
-    var auth = Math.floor(Math.random()*100);
-    if(auth > 30){
-        // auth failed, redirect
-        $state.transitionTo('login');
-    }
-    else{
-        // auth passed, continue route
-        $urlRouter.sync();
-    }}
-)});
+        // Perform auth logic
+        var auth = Math.floor(Math.random()*100);
+        if(auth > 30){
+            // auth failed, redirect
+            $state.transitionTo('login');
+        }
+        else{
+            // auth pased, continue route
+            $urlRouter.sync();
+        }
+
+    })
+
+});
 
 
