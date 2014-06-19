@@ -11,7 +11,8 @@ angular.module('haldev01App', [
     'ui.router',
     'main',
     'login',
-    'activities'
+    'activities',
+    'dining'
 ])
     /**
      * single place to list all the apps states/routes
@@ -29,6 +30,11 @@ angular.module('haldev01App', [
             url: '/activities',
             templateUrl: 'activities/activities.html',
             controller: 'LoginCtrl'
+        })
+        .state('dining', {
+            url: '/dining',
+            templateUrl: 'dining/dining.html',
+            controller: 'DiningCtrl'
         })
         .state('login', {
             url: '/login',
