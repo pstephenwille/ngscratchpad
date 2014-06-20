@@ -56,7 +56,7 @@ angular.module('haldev01App', [
 
         // Perform auth logic
         var auth = Math.floor(Math.random()*100);
-        if(auth > 30){
+        if(!auth){
             // auth failed, redirect
             $state.transitionTo('login');
         }
