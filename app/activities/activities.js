@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('activities',
-    ['activitiesService']
+    ['activitiesService',
+    'activities.woot']
     )
     .controller('ActivitiesCtrl', function ($scope, AllActivities, activitiesService) {
         $scope.module = 'Activities';
@@ -13,5 +14,18 @@ angular.module('activities',
         return{
             texasHoldem: 'Texas Hold\'em'
         }
+    }
+);
+
+
+angular.module('activities.woot', []
+    )
+    .controller('WootCtrl', function () {
+        $scope.ctrl = "activities.woot ctrl";
+    })
+    .factory('wootFactory', function () {
+        return{
+            name: "activites.woot factory service"
+        };
     }
 );

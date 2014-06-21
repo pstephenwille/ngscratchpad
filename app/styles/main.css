@@ -39,14 +39,14 @@ a {
     width: 20em;
 }
 .navBtn .onOff {
-    background: url("../images/sprite.png") no-repeat scroll -0.1em 0 rgba(0, 0, 0, 0);
+    background: url("../images/sprite.png") no-repeat scroll 0em 0em rgba(0, 0, 0, 0);
     background-size: 455%;
     height: 5em;
     width: 5em;
     float: left;
 }
 .navBtn .onOff:hover {
-    background-position: -0.1em -5.15em;
+    background-position: 0em -5.13em;
 }
 
 
