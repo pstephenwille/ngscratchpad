@@ -27,5 +27,16 @@ angular.module('activities.woot', []
         return{
             name: "activites.woot factory service"
         };
+    })
+    .directive('wootDir', function(){
+        return {
+            restrict: 'E',
+            scope:true,
+            template:'<h2>rendered woot-dir directive::{{$parent.texasHoldem}}</h2>'+
+                        '<p> "texas hold\'em" is bound in "ActivitiesCtrl"</p>',
+            link:function(scope, element, attrs, ctrl){
+                console.log(scope.texasHoldem);
+            }
+        }
     }
 );
