@@ -5,9 +5,6 @@
  * */
 
 angular.module('haldev01App', [
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
     'ui.router',
     'main',
     'login',
@@ -44,7 +41,7 @@ angular.module('haldev01App', [
 })
 .factory('GlobalFactory', function(){
     return{
-        scope:'i am avail to all modules, aka global scope'
+        scope:'This value defined in main app as a factory service'
     }
 })
 .run(function ($rootScope, $urlRouter, $state) {

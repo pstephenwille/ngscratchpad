@@ -12,7 +12,7 @@ angular.module('activitiesService',
     []
     )
     .factory('activitiesService', function () {
-        return{service: 'activities service module'};
+        return{service: 'This value returned from "activitiesService" module'};
     }
 );
 

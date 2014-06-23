@@ -2,8 +2,9 @@
 
 angular.module('activities',
     ['activitiesService',
-    'activities.woot']
-    )
+    'activities.woot'/* required */
+    ]
+)
     .controller('ActivitiesCtrl', function ($scope, AllActivities, activitiesService) {
         $scope.module = 'Activities';
         $scope.texasHoldem = AllActivities.texasHoldem;
@@ -12,7 +13,7 @@ angular.module('activities',
     })
     .factory('AllActivities', function () {
         return{
-            texasHoldem: 'Texas Hold\'em'
+            texasHoldem: 'Texas Hold\'em, defined in "activities" as a factory'
         }
     }
 );
@@ -20,22 +21,22 @@ angular.module('activities',
 
 angular.module('activities.woot', []
     )
-    .controller('WootCtrl', function () {
-        $scope.ctrl = "activities.woot ctrl";
+    .controller('WootCtrl', function ($scope) {
+//        var woot = this;
+        $scope.ctrl = "activities.woot WootCtrl";
     })
     .factory('wootFactory', function () {
         return{
-            name: "activites.woot factory service"
+            name: "This is activites.woot factory service"
         };
     })
-    .directive('wootDir', function(){
+    .directive('wootDir', function($compile){
         return {
-            restrict: 'E',
+            restrict:'E',
             scope:true,
-            template:'<h2>rendered woot-dir directive::{{$parent.texasHoldem}}</h2>'+
-                        '<p> "texas hold\'em" is bound in "ActivitiesCtrl"</p>',
+            template : '<h3>Rendered "woot-dir" directive::bound in {{ctrl}}</h2>',
             link:function(scope, element, attrs, ctrl){
-                console.log(scope.texasHoldem);
+                console.log(ctrl);
             }
         }
     }

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dining',
-    ['activitiesService']
+    []
 )
     .controller('DiningCtrl', function ($scope, AllActivities, activitiesService) {
         $scope.module = 'dining';
